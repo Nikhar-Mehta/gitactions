@@ -1,0 +1,19 @@
+name: CI
+on: [push]
+
+jobs:
+ build-and-run:
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v1
+  - name: Build Code
+    run: make Hello.java
+  - name: run
+    run: java Hello
+  - name: Upload a Build Artifact
+  - uses: actions/upload-artifact@v2
+    with:
+     # Artifact name
+     name: Hello
+     # A file, directory or wildcard pattern that describes what to upload
+     path: gitactions
