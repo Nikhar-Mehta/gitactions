@@ -14,10 +14,10 @@ jobs:
   - name: run
     run: java Hello
    
-  - name: build artifact
-    uses: actions/upload-artifact@master
+  - name: SAST-scan 
+    uses: AppThreat/sast-scan-action@1.0.2
     with:
-     # Artifact name
-     name: Hello-artifact
-     # what to upload
-     path: gitactions
+       output: sast-reports
+       type: java
+   
+ 
