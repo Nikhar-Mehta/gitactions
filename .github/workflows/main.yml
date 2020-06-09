@@ -11,7 +11,7 @@ jobs:
   - name: run
     run: java Hello
   - name: Upload a Build Artifact
-  - uses: actions/upload-artifact@v2
+    uses: actions/upload-artifact@v2
     with:
      # Artifact name
      name: Hello
