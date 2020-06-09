@@ -19,5 +19,16 @@ jobs:
     with:
        output: sast-reports
        type: java
-   
+       
+  - name: The scan has failed
+    if: failure()
+    run: echo 'The Scan failed'
+    
+   # upload artifact
+  - name: Upload scan reports
+    if: always()
+    uses: actions/upload-artifact@v1.0.0
+    with:
+        name: sast-reports
+        path: sast-reports   
  
