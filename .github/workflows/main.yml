@@ -1,14 +1,15 @@
-name: CI
-on: [push]
-
-jobs:
- build-and-run:
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v1
-  - name: Build Code
-    run: make Hello.java
-  - name: run
-    run: java Hello
-
-
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  'Nikhar' # id of input
+   description: 'Who to greet'
+   required: true
+   default: 'world'
+outputs:
+  time: output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
