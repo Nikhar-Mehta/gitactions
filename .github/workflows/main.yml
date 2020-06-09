@@ -10,8 +10,7 @@ jobs:
     run: make Hello.java
   - name: run
     run: java Hello
-  - name: Upload a Build Artifact
-    uses: actions/upload-artifact@master
+  - uses: actions/upload-artifact@master
     with:
      # Artifact name
      name: Hello
