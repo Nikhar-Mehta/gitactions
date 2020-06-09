@@ -7,20 +7,13 @@ jobs:
   
   steps:
   - uses: actions/checkout@v1
-  - uses: actions/setup-node@v1
-    with:
-          node-version: 12
     
   - name: Build Code
     run: make Hello.java
     
   - name: run
     run: java Hello
-  
-  - run: npm ci  #to install dependencies
-  - run: npm test #to test the code
-  - run: npm run build #to build the code
- 
+   
   - name: build artifact
     uses: actions/upload-artifact@master
     with:
