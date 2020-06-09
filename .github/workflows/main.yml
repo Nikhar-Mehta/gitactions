@@ -1,4 +1,4 @@
-name: Hello
+name: CI
 on: [push]
 
 jobs:
@@ -10,3 +10,12 @@ jobs:
     run: make Hello.java
   - name: run
     run: java Hello
+  - name: Checkout
+    uses: actions/checkout@v1
+  - name: Checkmarx Action
+    uses: checkmarx-ts/checkmarx-github-action@<version>
+    with:
+        cxServer: https://checkmarx.company.com
+        cxUsername: First.Last@company.com
+        cxPassword: ${{ secrets.CX_PASSWORD }}
+        cxTeam: \CxServer\SP\Company\TeamA
