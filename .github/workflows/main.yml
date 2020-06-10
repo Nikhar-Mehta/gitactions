@@ -43,8 +43,5 @@ jobs:
        username: nikharmehta
        password: secrets.Docker_Hub_Password
        repository: docker_1
-       path: https://hub.docker.com/_/jenkins
-       target: build
-       push: true
-       
+     
  
