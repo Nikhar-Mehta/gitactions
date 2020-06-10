@@ -45,7 +45,6 @@ jobs:
        repository: docker_1
        path: nikharmehta/docker_1
        target: build
-       always_pull: docker pull jenkins
        push: true
        
  
