@@ -19,16 +19,29 @@ jobs:
     with:
        output: sast-reports
        type: java
+      
+  - name: SAST scan succeeded
+    if: success()
+    run: echo 'SAST scan succeeded'
+   
        
-  - name: The scan has failed
+  - name: SAST scan failed
     if: failure()
-    run: echo 'The Scan failed'
+    run: echo 'SAST scan failed'
     
    # upload artifact
-  - name: Upload scan reports
+  - name: SAST scan report
     if: always()
     uses: actions/upload-artifact@v1.0.0
     with:
         name: sast-reports
         path: sast-reports   
+       
+  - name: Build and push Docker images
+    uses: docker/build-push-action@v1.1.0
+    with:
+       username: nikharmehta
+       password: Mann@2018
+       repository: docker_1
+       
  
