@@ -41,9 +41,9 @@ jobs:
     uses: docker/build-push-action@v1.1.0
     with:
        username: nikharmehta
-       password: Mann@2018
+       password: secrets.Docker_Hub_Password
        repository: docker_1
-       path: nikharmehta/docker_1
+       path: https://hub.docker.com/_/jenkins
        target: build
        push: true
        
