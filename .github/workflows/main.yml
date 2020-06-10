@@ -27,7 +27,7 @@ jobs:
        
   - name: SAST scan failed
     if: failure()
-    run: echo 'SAST scan failed'
+    run: echo 'SAST-scan failed'
     
    # upload artifact
   - name: SAST scan report
