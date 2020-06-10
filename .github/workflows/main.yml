@@ -42,13 +42,11 @@ jobs:
     with:
        username: nikharmehta
        password: ${{ secrets.Docker_Hub_Password }}
-       name: input
-       inputs.x: 10
-       inputs.y: 20
-       outputs.z: x+y
-       run: echo $z
-         
-   
-
+       
+       
+  - name: Set selected color
+    run: echo '::set-env name=SELECTED_COLOR::green'
+  - name: Get color
+    run: echo 'The selected color is' $SELECTED_COLOR
      
  
