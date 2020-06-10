@@ -8,42 +8,45 @@ jobs:
   steps:
   - uses: actions/checkout@v1
     
+# Build and run code
   - name: Build Code
     run: make Hello.java
     
   - name: run
     run: java Hello
    
+# SAST-scan, also includes findbugs
   - name: SAST-scan 
     uses: AppThreat/sast-scan-action@1.0.2
     with:
        output: sast-reports
        type: java
       
+# Conditional statements
   - name: SAST scan succeeded
     if: success()
     run: echo 'SAST scan succeeded'
-   
-       
+     
   - name: SAST scan failed
     if: failure()
     run: echo 'SAST-scan failed'
     
-   # upload artifact
+# Upload artifact
   - name: SAST scan report
     if: always()
     uses: actions/upload-artifact@v1.0.0
     with:
         name: sast-reports
         path: sast-reports   
-       
+  
+ # Use of secrets
   - name: Docker login
     uses: Azure/docker-login@v1
     with:
        username: nikharmehta
        password: ${{ secrets.Docker_Hub_Password }}
        
-       
+ # User parameters      
   - name: Set selected color
     run: echo '::set-env name=SELECTED_COLOR::green'
   - name: Get color
