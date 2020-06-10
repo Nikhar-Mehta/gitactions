@@ -1,1 +1,11 @@
+name: CI
+on: [push]
 
+jobs:
+ build-and-run:
+  runs-on: ubuntu-latest
+  
+  steps: |
+   branding:
+    icon: 'award'  
+    color: 'green'
