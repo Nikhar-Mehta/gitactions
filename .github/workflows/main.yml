@@ -37,11 +37,11 @@ jobs:
         name: sast-reports
         path: sast-reports   
        
-  - name: Build and push Docker images
-    uses: docker/build-push-action@v1.1.0
+  - name: Docker login
+    uses: Azure/docker-login@v1
     with:
        username: nikharmehta
-       password: Mann@2018
-       repository: docker_1
+       password: ${{ secrets.Docker_Hub_Password }}
+
      
  
