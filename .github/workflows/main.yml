@@ -25,7 +25,11 @@ jobs:
 # Conditional statements
   - name: SAST scan succeeded
     if: success()
-    run: echo 'SAST scan succeeded'
+# Use of secrets
+    uses: Azure/docker-login@v1
+    with:
+       username: nikharmehta
+       password: ${{ secrets.Docker_Hub_Password }}
      
   - name: SAST scan failed
     if: failure()
