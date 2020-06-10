@@ -41,7 +41,7 @@ jobs:
     uses: docker/build-push-action@v1.1.0
     with:
        username: nikharmehta
-       password: secrets.Docker_Hub_Password
+       password: Mann@2018
        repository: docker_1
      
  
