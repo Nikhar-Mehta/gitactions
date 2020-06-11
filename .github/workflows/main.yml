@@ -43,17 +43,21 @@ jobs:
         name: sast-reports
         path: sast-reports   
   
- # Use of secrets
+# Use of secrets
   - name: Docker login
     uses: Azure/docker-login@v1
     with:
        username: nikharmehta
        password: ${{ secrets.Docker_Hub_Password }}
        
- # User parameters      
+# User parameters      
   - name: Set selected color
     run: echo '::set-env name=SELECTED_COLOR::green'
   - name: Get color
     run: echo 'The selected color is' $SELECTED_COLOR
+    
+# Use of functions
+  - name: functions
+    run: echo 'contains('Hello world','llo')'
      
  
