@@ -55,8 +55,10 @@ jobs:
     run: echo '::set-env name=SELECTED_COLOR::green'
   - name: Get color
     run: echo 'The selected color is' $SELECTED_COLOR
-     contains('Hello world','llo')
+      
 # Use of functions
-     
+  - name: functions
+    if: ${{ contains('Hello world', 'llo') }}
+    run: echo 'llo is a part of Hello World'
      
  
