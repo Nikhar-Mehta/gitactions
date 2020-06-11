@@ -55,9 +55,8 @@ jobs:
     run: echo '::set-env name=SELECTED_COLOR::green'
   - name: Get color
     run: echo 'The selected color is' $SELECTED_COLOR
-    
-# Use of functions
-  - name: functions
      contains('Hello world','llo')
+# Use of functions
+     
      
  
