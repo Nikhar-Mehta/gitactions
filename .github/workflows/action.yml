@@ -12,7 +12,8 @@ jobs:
       with:
           who-to-greet: ${{ env.input }}
 
-    # use input from the github context[https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context) - uses: actions/hello-world-javascript-action@master
+    # use input from the github context[https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context) 
+    - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: ${{ github.repository}}
 
