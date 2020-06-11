@@ -58,6 +58,6 @@ jobs:
     
 # Use of functions
   - name: functions
-    run: echo 'contains('Hello world','llo')'
+    'contains('Hello world','llo')'
      
  
