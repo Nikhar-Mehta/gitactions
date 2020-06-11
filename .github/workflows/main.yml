@@ -7,7 +7,6 @@ jobs:
   
   steps:
 # Checkout
-  - name: checkout
   - uses: actions/checkout@v1
     
 # Build and run code
