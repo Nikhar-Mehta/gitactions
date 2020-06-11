@@ -6,6 +6,8 @@ jobs:
   runs-on: ubuntu-latest
   
   steps:
+# Checkout
+  - name: checkout
   - uses: actions/checkout@v1
     
 # Build and run code
@@ -62,15 +64,15 @@ jobs:
     if: ${{ contains('Hello world', 'llo') }}
     run: echo 'llo is a part of Hello World'
     
-  - name: contain function
+  - name: startsWith function
     if: ${{ startsWith('Hello world', 'He') }}
     run: echo 'Hello World starts with He'
     
-  - name: contain function
+  - name: endsWith function
     if: ${{ endsWith('Hello world', 'ld') }}
     run: echo 'Hello World ends with ld'
      
-  - name: contain function
+  - name: format function
     run: echo '${{ format('{{Hello {0} {1} {2}!}}', 'Nikhar', 'Ajith', 'Sneha') }}'
    
     
