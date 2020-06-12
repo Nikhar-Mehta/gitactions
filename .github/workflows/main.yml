@@ -4,7 +4,7 @@ on: [push]
 jobs:
  build-and-run:
  # Self-hosted runner
-  runs-on: self-hosted
+  runs-on: ubuntu-latest
   
   steps:
 # Checkout
