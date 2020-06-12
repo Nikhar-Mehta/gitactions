@@ -16,7 +16,7 @@ jobs:
   - name: run
     run: java Hello
    
-# SAST-scan, also includes findbugs
+# SAST-scan, report also includes findbugs
   - name: SAST-scan 
     uses: AppThreat/sast-scan-action@1.0.2
     with:
