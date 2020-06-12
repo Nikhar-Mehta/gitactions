@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
  build-and-run:
- # Self-hosted
+ # Self-hosted runner
   runs-on: self-hosted
   
   steps:
