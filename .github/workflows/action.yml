@@ -19,4 +19,8 @@ jobs:
         with:
         # URL to poll
          url: http://13.89.226.45:9090/stargazer/api/applications/get
+         method: 'GET'
+         username: 'nikhar'
+         password: 'Nikki@123'
+         bearerToken: ${{ secrets.Bearertoken }}
         
