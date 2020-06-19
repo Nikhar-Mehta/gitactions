@@ -12,3 +12,10 @@ jobs:
          method: 'GET'
          username: 'nikhar'
          password: ${{ secrets.Docker_Hub_Password }}
+
+      - name: Wait For HTTP Responses
+        uses: cygnetdigital/wait_for_response@v2.0.0
+        with:
+        # URL to poll
+         url: https://hub.docker.com/
+        
