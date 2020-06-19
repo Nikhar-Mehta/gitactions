@@ -8,14 +8,15 @@ jobs:
       - name: HTTP Request Action
         uses: fjogeleit/http-request-action@v1.3.1
         with:
-         url: 'https://hub.docker.com/'
+         url: 'http://13.89.226.45:9090/stargazer/api/applications/get'
          method: 'GET'
          username: 'nikhar'
-         password: ${{ secrets.Docker_Hub_Password }}
+         password: 'Nikki@123'
+         bearerToken: ${{ secrets.Bearertoken }}
 
       - name: Wait For HTTP Responses
         uses: cygnetdigital/wait_for_response@v2.0.0
         with:
         # URL to poll
-         url: https://hub.docker.com/
+         url: http://13.89.226.45:9090/stargazer/api/applications/get
         
