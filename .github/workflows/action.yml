@@ -18,9 +18,6 @@ jobs:
         uses: cygnetdigital/wait_for_response@v2.0.0
         with:
         # URL to poll
-         url: http://13.89.226.45:9090/stargazer/api/applications/get
-         method: 'GET'
-         username: 'nikhar'
-         password: 'Nikki@123'
-         bearerToken: ${{ secrets.Bearertoken }}
+         url: http://13.89.226.45:9090
+        
         
