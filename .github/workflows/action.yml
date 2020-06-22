@@ -1,7 +1,7 @@
 on: push
 jobs:
    deployment:
-     runs-on: ubuntu-latest
+     runs-on: self-hosted
      steps:
       - name: cURL AxiosJS
         uses: indiesdev/curl@v1
