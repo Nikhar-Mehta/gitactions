@@ -4,7 +4,6 @@ jobs:
      runs-on: self-hosted
      steps:
      - name: CURL-ACTION
-       uses: enflo/curl-action@v1.2
+       uses: wei/curl@v1
        with:
-        # curl argument
-         curl: 'curl -X POST http://13.89.226.45:9090/stargazer/user/signup --data "username=xyz&password=Nikki@123&confirmPassword=Nikki@123"'
+        args: -X POST http://13.89.226.45:9090/stargazer/api/applications/get?userName=nikhar&password=Nikki@123
