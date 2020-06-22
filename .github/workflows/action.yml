@@ -7,4 +7,4 @@ jobs:
        uses: enflo/curl-action@v1.2
        with:
         # curl argument
-         curl: 'curl -X POST http://13.89.226.45:9090/stargazer/user/signup --data "username=xyz&password=Nikki@123&confirmPassword=Nikki@123"'
+         curl: 'http://13.89.226.45:9090/stargazer'
