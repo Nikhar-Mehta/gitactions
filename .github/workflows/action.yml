@@ -3,7 +3,12 @@ jobs:
    deployment:
      runs-on: self-hosted
      steps:
-     - name: CURL-ACTION1
-       uses: wei/curl@v1.1.1
-       with:
-        args: -X POST http://13.89.226.45:9090/stargazer/api/applications/get?userName=nikhar&password=Nikki@123
+      - name: cURL AxiosJS
+        uses: indiesdev/curl@v1
+        with:
+         # The target url
+         url: http://13.89.226.45:9090/stargazer/user/signup
+        # The request method, basically one of GET, POST, PUT, PATCH
+         method: POST
+        # Body object
+         body: username=xyz&password=Nikki@123&confirmPassword=Nikki@123
