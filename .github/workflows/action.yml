@@ -12,7 +12,6 @@ jobs:
         id: get_latest_release
         with:
           route: GET /repos/:Nikhar-Mehta/Demo-project/releases/latest
-          repository: Nikhar-Mehta/Demo-project
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: "echo latest release: ${{ steps.get_latest_release.outputs.data }}"
