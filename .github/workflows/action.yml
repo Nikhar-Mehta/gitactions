@@ -1,23 +1,18 @@
-on: push
-jobs:
-   deployment:
-     runs-on: ubuntu-latest
-     steps:
-      - uses: actions/checkout@v1
-        
-      - name: HTTP Request Action
-        uses: fjogeleit/http-request-action@v1.3.1
-        with:
-         url: 'http://13.89.226.45:9090/stargazer/api/applications/get'
-         method: 'GET'
-         username: 'nikhar'
-         password: 'Nikki@123'
-         bearerToken: ${{ secrets.Bearertoken }}
+name: Log latest release
+on:
+  push:
+    branches:
+      - master
 
-      - name: Wait For HTTP Responses
-        uses: cygnetdigital/wait_for_response@v2.0.0
+jobs:
+  logLatestRelease:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: octokit/request-action@v2.x
+        id: get_latest_release
         with:
-        # URL to poll
-         url: http://13.89.226.45:9090
-        
-        
+          route: GET /repos/:repository/releases/latest
+          repository: ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo latest release: ${{ steps.get_latest_release.outputs.data }}"
