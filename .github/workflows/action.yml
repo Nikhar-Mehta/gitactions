@@ -1,18 +1,10 @@
-name: Log latest release
-on:
-  push:
-    branches:
-      - master
-
+on: push
 jobs:
-  logLatestRelease:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: octokit/request-action@v2.x
-        id: get_latest_release
+   deployment:
+     runs-on: ubuntu-latest
+     steps:
+      - name: CURL-ACTION
+        uses: enflo/curl-action@v1.2
         with:
-          route: GET gitactions:repository/releases/latest
-          repository: ${{ github.repository }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo latest release: ${{ steps.get_latest_release.outputs.data }}"
+        # curl arguments
+         curl: 'http://13.89.226.45:9090/stargazer/api/applications/get -H "Content-Type: application/json" -H “Authorization: Bearer ${{ secrets.Bearertoken }}”'
