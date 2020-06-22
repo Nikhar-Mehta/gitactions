@@ -3,8 +3,13 @@ jobs:
    deployment:
      runs-on: ubuntu-latest
      steps:
-      - name: CURL-ACTION
-        uses: enflo/curl-action@v1.2
+      - name: cURL AxiosJS
+        uses: indiesdev/curl@v1
         with:
-        # curl argument
-         curl: 'curl -X POST http://13.89.226.45:9090/stargazer/user/signup --data "username=xyz&password=Nikki@123&confirmPassword=Nikki@123"'
+         # The target url
+         url: http://13.89.226.45:9090/stargazer/user/signup
+        # The request method, basically one of GET, POST, PUT, PATCH
+         method: POST
+        # Body object
+         body: username=xyz&password=Nikki@123&confirmPassword=Nikki@123
+    
