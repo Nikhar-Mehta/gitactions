@@ -3,18 +3,19 @@ jobs:
    deployment:
      runs-on: self-hosted
      steps:
-     - name: curl1
-       uses: wei/curl@v1
-       with:
-        args: -X POST http://13.89.226.45:9090/stargazer/api/applications/get?userName=nikhar&password=Nikki@123
-        
-     - name: cURL AxiosJS
-       uses: satak/webrequest-action@master
-       with:
+      - name: cURL AxiosJS
+        uses: satak/webrequest-action@master
+        with:
     # The target url
          url: 'http://13.89.226.45:9090/stargazer/api/applications/get'
     # The request method, basically one of GET, POST, PUT, PATCH
          method: GET
     # Bearer Token
          auth: ${{ secrets.Bearertoken }}
+      - name: curl1
+        uses: wei/curl@v1
+        with:
+         args: -X POST http://13.89.226.45:9090/stargazer/api/applications/get?userName=nikhar&password=Nikki@123
+        
+    
  
