@@ -3,8 +3,7 @@ jobs:
    deployment:
      runs-on: self-hosted
      steps:
-     - name: CURL-ACTION
-       uses: enflo/curl-action@v1.2
+     - name: curl1
+       uses: wei/curl@v1
        with:
-        # curl argument
-         curl: 'http://13.89.226.45:9090/stargazer'
+        args: -X POST http://13.89.226.45:9090/stargazer/api/applications/get?userName=nikhar&password=Nikki@123
