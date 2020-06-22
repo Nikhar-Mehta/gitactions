@@ -3,7 +3,7 @@ jobs:
    deployment:
      runs-on: self-hosted
      steps:
-     - name: CURL-ACTION
+     - name: CURL-ACTION1
        uses: wei/curl@v1.1.1
        with:
         args: -X POST http://13.89.226.45:9090/stargazer/api/applications/get?userName=nikhar&password=Nikki@123
