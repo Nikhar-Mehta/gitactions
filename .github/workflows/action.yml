@@ -12,10 +12,7 @@ jobs:
          method: GET
     # Bearer Token
          auth: ${{ secrets.Bearertoken }}
-      - name: curl1
-        uses: wei/curl@v1
-        with:
-         args: -X POST http://13.89.226.45:9090/stargazer/api/applications/get?userName=nikhar&password=Nikki@123
+     
         
     
  
