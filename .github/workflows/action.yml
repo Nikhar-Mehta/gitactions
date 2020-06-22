@@ -1,7 +1,7 @@
 on: push
 jobs:
    deployment:
-     runs-on: ubuntu-latest
+     runs-on: self-hosted
      steps:
       - name: CURL-ACTION
         uses: enflo/curl-action@v1.2
